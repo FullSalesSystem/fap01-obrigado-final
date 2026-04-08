@@ -6,7 +6,7 @@
   <title>Cadastro Concluído | Obrigado!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -15,249 +15,392 @@
     }
 
     :root {
-      --gold: #F5A623;
-      --gold-light: #FFD166;
-      --dark: #0D0D0D;
-      --dark-card: #161616;
-      --dark-border: #2a2a2a;
-      --text-primary: #FFFFFF;
-      --text-secondary: #A0A0A0;
+      --red: #FE063B;
+      --red-dark: #c90030;
+      --red-glow: rgba(254, 6, 59, 0.07);
+      --red-glow-md: rgba(254, 6, 59, 0.12);
+      --bg: #ffffff;
+      --bg-alt: #f4f4f7;
+      --text-primary: #111118;
+      --text-muted: #55556a;
+      --border: rgba(0, 0, 0, 0.10);
     }
 
-    html, body {
-      min-height: 100vh;
-      background-color: var(--dark);
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
       color: var(--text-primary);
-      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
     }
 
-    /* ── TOP BAR ── */
-    .top-bar {
-      background: linear-gradient(90deg, #B8860B 0%, var(--gold) 40%, var(--gold-light) 70%, var(--gold) 100%);
-      padding: 13px 20px;
+    /* ── NOTIFICATION BAR ── */
+    .notif-bar {
+      background: var(--red);
+      padding: 12px 20px;
       text-align: center;
     }
 
-    .top-bar p {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(0.78rem, 2.2vw, 0.97rem);
+    .notif-bar p {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(0.75rem, 2.2vw, 0.92rem);
       font-weight: 700;
-      color: #1a1a1a;
+      color: #fff;
       letter-spacing: 0.01em;
-      line-height: 1.4;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
-    .top-bar span.icon {
-      margin-right: 6px;
+    .notif-bar .dot {
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      border-radius: 50%;
+      display: inline-block;
+      opacity: 0.85;
+      animation: blink 1.8s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0.85; }
+      50%       { opacity: 0.3;  }
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navbar-logo img {
+      height: 36px;
+      display: block;
     }
 
     /* ── HERO ── */
     .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 52px 20px 16px;
+      background: var(--bg-alt);
+      padding: 64px 24px 56px;
       text-align: center;
     }
 
-    .badge {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(245, 166, 35, 0.12);
-      border: 1px solid rgba(245, 166, 35, 0.35);
+      background: var(--red-glow-md);
+      border: 1px solid rgba(254, 6, 59, 0.2);
       border-radius: 50px;
-      padding: 6px 18px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
+      padding: 6px 16px;
+      margin-bottom: 28px;
     }
 
-    .badge svg {
-      width: 14px;
-      height: 14px;
-      fill: var(--gold);
+    .hero-badge span {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .hero-badge .check {
+      width: 16px;
+      height: 16px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hero-badge .check svg {
+      width: 9px;
+      height: 9px;
+      stroke: #fff;
+      stroke-width: 2.5;
+      fill: none;
     }
 
     .hero h1 {
-      font-size: clamp(1.65rem, 5vw, 2.9rem);
-      font-weight: 900;
-      line-height: 1.2;
-      max-width: 780px;
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.75rem, 5vw, 3rem);
+      font-weight: 800;
       color: var(--text-primary);
+      line-height: 1.18;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
-    .hero h1 .highlight {
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .hero h1 .accent {
+      color: var(--red);
+    }
+
+    .hero-divider {
+      width: 44px;
+      height: 3px;
+      background: var(--red);
+      border-radius: 2px;
+      margin: 24px auto 20px;
     }
 
     .hero p.subtitle {
-      margin-top: 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      font-size: clamp(0.97rem, 2.4vw, 1.15rem);
       font-weight: 400;
-      color: var(--text-secondary);
-      max-width: 560px;
-      line-height: 1.6;
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      border-radius: 2px;
-      margin: 28px auto 0;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.65;
     }
 
     /* ── VIDEO SECTION ── */
     .video-section {
-      padding: 36px 20px 60px;
+      padding: 52px 24px 72px;
+      background: var(--bg);
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    .video-wrapper {
-      position: relative;
+    .video-card {
       width: 100%;
-      max-width: 780px;
-      background: var(--dark-card);
-      border-radius: 16px;
+      max-width: 800px;
+      background: var(--bg);
+      border-radius: 18px;
+      border: 1px solid var(--border);
       overflow: hidden;
-      border: 1px solid var(--dark-border);
       box-shadow:
-        0 0 0 1px rgba(245, 166, 35, 0.08),
-        0 24px 60px rgba(0, 0, 0, 0.6),
-        0 0 80px rgba(245, 166, 35, 0.06);
+        0 2px 8px rgba(0,0,0,0.06),
+        0 16px 48px rgba(0,0,0,0.09);
     }
 
-    .video-top-strip {
-      background: linear-gradient(90deg, #B8860B, var(--gold), var(--gold-light), var(--gold));
-      height: 4px;
-      width: 100%;
-    }
-
-    .video-inner {
-      padding: 6px 0 0;
-    }
-
-    vturb-smartplayer {
-      display: block;
-      width: 100% !important;
-      margin: 0 auto;
-    }
-
-    /* ── FOOTER INFO ── */
-    .footer-info {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      margin-top: 32px;
-      flex-wrap: wrap;
-    }
-
-    .info-item {
+    .video-card-header {
+      background: var(--red);
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       gap: 10px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--dark-border);
-      border-radius: 12px;
-      padding: 14px 22px;
     }
 
-    .info-item svg {
-      width: 22px;
-      height: 22px;
+    .video-card-header .dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .video-card-header .dot-circle {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+    }
+
+    .video-card-header p {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.04em;
+    }
+
+    .video-card-body {
+      padding: 0;
+      background: #000;
+    }
+
+    vturb-smartplayer {
+      display: block !important;
+      width: 100% !important;
+    }
+
+    /* ── INFO CARDS ── */
+    .info-cards {
+      display: flex;
+      gap: 16px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .info-card {
+      flex: 1;
+      min-width: 180px;
+      max-width: 240px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .info-card-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--red-glow-md);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
 
-    .info-item p {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      line-height: 1.4;
+    .info-card-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--red);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
-    .info-item p strong {
+    .info-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .info-card p strong {
       display: block;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.87rem;
+      font-weight: 700;
       color: var(--text-primary);
-      font-size: 0.9rem;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
 
-    /* ── PAGE FOOTER ── */
-    .page-footer {
-      border-top: 1px solid var(--dark-border);
-      padding: 20px;
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
       text-align: center;
     }
 
-    .page-footer p {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      color: #444;
+    .footer-logo {
+      margin-bottom: 12px;
+    }
+
+    .footer-logo img {
+      height: 28px;
+      opacity: 0.55;
+    }
+
+    .footer p {
+      font-size: 0.73rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .footer a {
+      color: var(--text-muted);
+      text-decoration: underline;
+    }
+
+    .footer a:hover {
+      color: var(--red);
     }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .hero {
-        padding-top: 36px;
+        padding: 44px 20px 40px;
       }
-      .footer-info {
+
+      .info-cards {
         flex-direction: column;
         align-items: center;
-        gap: 12px;
       }
-      .info-item {
+
+      .info-card {
+        max-width: 100%;
         width: 100%;
-        max-width: 340px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <div class="top-bar">
+  <!-- NOTIFICATION BAR -->
+  <div class="notif-bar">
     <p>
-      <span class="icon">✅</span>
+      <span class="dot"></span>
       Seu cadastro foi concluído. Em até 12 horas um consultor falará com você!
     </p>
   </div>
 
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container">
+      <div class="navbar-logo">
+        <img
+          src="https://raw.githubusercontent.com/FullSalesSystem/fap01/claude/redesign-fap01-page-J6t4T/LOGO-(Azul)---Full-Sales.png"
+          alt="Full Sales System"
+        />
+      </div>
+    </div>
+  </header>
+
   <!-- HERO -->
   <section class="hero">
-    <div class="badge">
-      <svg viewBox="0 0 20 20"><path d="M10 1l2.39 6.26L18.5 7.64l-4.75 4.13 1.6 6.23L10 14.5l-5.35 3.5 1.6-6.23L1.5 7.64l6.11-.38L10 1z"/></svg>
-      Cadastro Confirmado
+    <div class="hero-badge">
+      <span class="check">
+        <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
+      </span>
+      <span>Cadastro Confirmado</span>
     </div>
 
     <h1>
       Parabéns! Seu cadastro<br />
-      está <span class="highlight">realizado com sucesso!</span>
+      está <span class="accent">realizado com sucesso!</span>
     </h1>
+
+    <div class="hero-divider"></div>
 
     <p class="subtitle">
       Assista o vídeo abaixo para entender melhor os próximos passos
     </p>
-
-    <div class="divider"></div>
   </section>
 
   <!-- VIDEO -->
   <section class="video-section">
-    <div class="video-wrapper">
-      <div class="video-top-strip"></div>
-      <div class="video-inner">
+    <div class="video-card">
+      <div class="video-card-header">
+        <div class="dots">
+          <div class="dot-circle"></div>
+          <div class="dot-circle"></div>
+          <div class="dot-circle"></div>
+        </div>
+        <p>Próximos Passos — Assista agora</p>
+      </div>
+      <div class="video-card-body">
         <vturb-smartplayer id="vid-6843286d92e4f2ececa984de" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
         <script type="text/javascript">
           var s = document.createElement("script");
@@ -269,29 +412,29 @@
     </div>
 
     <!-- INFO CARDS -->
-    <div class="footer-info">
-      <div class="info-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-        </svg>
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="info-card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
         <p>
           <strong>Prazo de contato</strong>
           Em até 12 horas úteis
         </p>
       </div>
-      <div class="info-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 13.5 19.79 19.79 0 0 1 1.15 4.84 2 2 0 0 1 3.12 2.68h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/>
-        </svg>
+      <div class="info-card">
+        <div class="info-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 13.5 19.79 19.79 0 0 1 1.15 4.84 2 2 0 0 1 3.12 2.68h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        </div>
         <p>
           <strong>Como será o contato</strong>
           Por telefone ou WhatsApp
         </p>
       </div>
-      <div class="info-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
+      <div class="info-card">
+        <div class="info-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
         <p>
           <strong>Seus dados estão seguros</strong>
           Proteção total garantida
@@ -300,9 +443,20 @@
     </div>
   </section>
 
-  <!-- PAGE FOOTER -->
-  <footer class="page-footer">
-    <p>© 2025 — Todos os direitos reservados.</p>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <img
+        src="https://raw.githubusercontent.com/FullSalesSystem/fap01/claude/redesign-fap01-page-J6t4T/LOGO-(Azul)---Full-Sales.png"
+        alt="Full Sales System"
+      />
+    </div>
+    <p>CNPJ: 51.843.626/0001-09</p>
+    <p>© 2026 fullsalessystem.com | Todos os direitos reservados</p>
+    <p>
+      <a href="#">Termos de Uso</a> &nbsp;·&nbsp;
+      <a href="#">Política de Privacidade</a>
+    </p>
   </footer>
 
 </body>
