@@ -46,7 +46,7 @@
 
     .notif-bar p {
       font-family: 'Sora', sans-serif;
-      font-size: clamp(0.75rem, 2.2vw, 0.92rem);
+      font-size: clamp(0.95rem, 2.8vw, 1.15rem);
       font-weight: 700;
       color: #fff;
       letter-spacing: 0.01em;
@@ -105,45 +105,6 @@
       background: var(--bg-alt);
       padding: 64px 24px 56px;
       text-align: center;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--red-glow-md);
-      border: 1px solid rgba(254, 6, 59, 0.2);
-      border-radius: 50px;
-      padding: 6px 16px;
-      margin-bottom: 28px;
-    }
-
-    .hero-badge span {
-      font-family: 'Sora', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--red);
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-    }
-
-    .hero-badge .check {
-      width: 16px;
-      height: 16px;
-      background: var(--red);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .hero-badge .check svg {
-      width: 9px;
-      height: 9px;
-      stroke: #fff;
-      stroke-width: 2.5;
-      fill: none;
     }
 
     .hero h1 {
@@ -348,14 +309,6 @@
 </head>
 <body>
 
-  <!-- NOTIFICATION BAR -->
-  <div class="notif-bar">
-    <p>
-      <span class="dot"></span>
-      Seu cadastro foi concluído. Em até 12 horas um consultor falará com você!
-    </p>
-  </div>
-
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="container">
@@ -368,15 +321,16 @@
     </div>
   </header>
 
+  <!-- NOTIFICATION BAR -->
+  <div class="notif-bar">
+    <p>
+      <span class="dot"></span>
+      Seu cadastro foi concluído. Em até 12 horas um consultor falará com você!
+    </p>
+  </div>
+
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-badge">
-      <span class="check">
-        <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
-      </span>
-      <span>Cadastro Confirmado</span>
-    </div>
-
     <h1>
       Parabéns! Seu cadastro<br />
       está <span class="accent">realizado com sucesso!</span>
