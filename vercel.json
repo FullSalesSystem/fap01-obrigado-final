@@ -4,10 +4,6 @@
       "source": "/(.*)",
       "headers": [
         {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://*.converteai.net https://*.vturb.com.br https://*.vturb.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-src https://*.converteai.net https://*.vturb.com.br https://*.vturb.com; media-src *; object-src 'none'; base-uri 'self'; form-action 'self'"
-        },
-        {
           "key": "X-Frame-Options",
           "value": "DENY"
         },
