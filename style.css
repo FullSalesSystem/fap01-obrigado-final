@@ -391,7 +391,7 @@ vturb-smartplayer {
 
 .carousel-slide {
   flex: 0 0 auto;
-  width: 300px;
+  width: 420px;
   scroll-snap-align: start;
   border-radius: 14px;
   overflow: hidden;
@@ -474,7 +474,7 @@ vturb-smartplayer {
   }
 
   .carousel-slide {
-    width: 260px;
+    width: 320px;
   }
 
   .carousel-btn {
