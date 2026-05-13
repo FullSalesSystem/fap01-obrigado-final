@@ -202,6 +202,17 @@
       var w = function(){ return slides[0].offsetWidth + 16; };
       btnL.addEventListener('click', function(){ track.scrollBy({left: -w(), behavior:'smooth'}); });
       btnR.addEventListener('click', function(){ track.scrollBy({left: w(), behavior:'smooth'}); });
+
+      var autoTimer = setInterval(function(){
+        var maxScroll = track.scrollWidth - track.clientWidth;
+        if (track.scrollLeft >= maxScroll - 2) {
+          track.scrollTo({left: 0, behavior:'smooth'});
+        } else {
+          track.scrollBy({left: w(), behavior:'smooth'});
+        }
+      }, 3000);
+
+      track.addEventListener('pointerdown', function(){ clearInterval(autoTimer); });
     })();
   </script>
 </body>
