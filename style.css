@@ -323,7 +323,7 @@ vturb-smartplayer {
 .testimonials-grid {
   column-count: 2;
   column-gap: 20px;
-  max-width: 960px;
+  max-width: 760px;
   margin: 40px auto 0;
 }
 
@@ -383,7 +383,7 @@ vturb-smartplayer {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 4px 0;
+  padding: 4px 24px;
 }
 
 .carousel-track::-webkit-scrollbar {
@@ -437,15 +437,16 @@ vturb-smartplayer {
   justify-content: center;
   gap: 8px;
   margin: 32px auto 0;
-  padding: 14px 32px;
+  padding: 16px 48px;
   background: var(--red);
   color: #fff;
   font-family: 'Sora', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 700;
   border-radius: 12px;
   text-decoration: none;
-  width: fit-content;
+  width: 100%;
+  max-width: 960px;
   transition: background 0.2s, transform 0.2s;
 }
 
