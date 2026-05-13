@@ -446,7 +446,7 @@ vturb-smartplayer {
   border-radius: 12px;
   text-decoration: none;
   width: 100%;
-  max-width: 960px;
+  max-width: 480px;
   transition: background 0.2s, transform 0.2s;
 }
 
