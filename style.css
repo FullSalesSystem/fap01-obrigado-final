@@ -342,12 +342,12 @@ vturb-smartplayer {
 
 .testimonial-card {
   flex: 0 0 auto;
-  width: 280px;
+  width: 240px;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid var(--border-on-dark);
-  background: rgba(12, 25, 54, 0.5);
+  border: none;
+  background: transparent;
   scroll-snap-align: start;
 }
 
@@ -473,7 +473,7 @@ vturb-smartplayer {
   }
 
   .testimonial-card {
-    width: 200px;
+    width: 170px;
     border-radius: 8px;
   }
 
