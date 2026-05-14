@@ -533,4 +533,12 @@ vturb-smartplayer {
   .carousel-btn {
     display: none;
   }
+
+  .podcast-cta {
+    padding: 10px 20px;
+    font-size: 0.78rem;
+    max-width: 260px;
+    border-radius: 8px;
+    opacity: 0.85;
+  }
 }
