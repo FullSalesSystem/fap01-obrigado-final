@@ -142,7 +142,7 @@ body {
 
 /* ── VIDEO SECTION ── */
 .video-section {
-  padding: 52px 24px 72px;
+  padding: 28px 24px 72px;
   background: transparent;
   display: flex;
   flex-direction: column;
@@ -321,34 +321,34 @@ vturb-smartplayer {
 }
 
 .testimonials-grid {
-  column-count: 2;
-  column-gap: 20px;
-  max-width: 760px;
+  column-count: 3;
+  column-gap: 16px;
+  max-width: 1080px;
   margin: 40px auto 0;
 }
 
 .testimonial-card {
   position: relative;
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--border-on-dark);
   background: rgba(12, 25, 54, 0.5);
   break-inside: avoid;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .testimonial-badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  right: 12px;
+  top: 8px;
+  left: 8px;
+  right: 8px;
   background: var(--red);
   color: #fff;
   font-family: 'Sora', sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 6px 12px;
-  border-radius: 8px;
+  padding: 5px 8px;
+  border-radius: 6px;
   z-index: 2;
   text-align: center;
   letter-spacing: 0.02em;
@@ -455,6 +455,42 @@ vturb-smartplayer {
   transform: translateY(-2px);
 }
 
+/* ── WHATSAPP FLOAT ── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 14px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: float-pulse 2.5s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-float svg {
+  flex-shrink: 0;
+}
+
+@keyframes float-pulse {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 600px) {
   .hero {
@@ -472,7 +508,22 @@ vturb-smartplayer {
   }
 
   .testimonials-grid {
-    column-count: 1;
+    column-count: 2;
+    column-gap: 10px;
+  }
+
+  .testimonial-card {
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+
+  .testimonial-badge {
+    font-size: 0.58rem;
+    padding: 3px 6px;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    border-radius: 5px;
   }
 
   .carousel-slide {
