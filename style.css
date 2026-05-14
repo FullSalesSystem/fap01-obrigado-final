@@ -321,7 +321,7 @@ vturb-smartplayer {
 }
 
 .testimonials-carousel-wrapper {
-  max-width: 100%;
+  max-width: 960px;
   margin: 32px auto 0;
   overflow: hidden;
 }
@@ -341,8 +341,7 @@ vturb-smartplayer {
 }
 
 .testimonial-card {
-  flex: 0 0 auto;
-  width: 240px;
+  flex: 0 0 calc((100% - 32px) / 3);
   position: relative;
   border-radius: 12px;
   overflow: hidden;
@@ -473,7 +472,7 @@ vturb-smartplayer {
   }
 
   .testimonial-card {
-    width: 170px;
+    flex: 0 0 170px;
     border-radius: 8px;
   }
 
