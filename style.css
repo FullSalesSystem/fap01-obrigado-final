@@ -321,8 +321,10 @@ vturb-smartplayer {
 }
 
 .testimonials-grid {
-  column-count: 3;
-  column-gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
   max-width: 720px;
   margin: 32px auto 0;
 }
@@ -333,8 +335,8 @@ vturb-smartplayer {
   overflow: hidden;
   border: none;
   background: transparent;
-  break-inside: avoid;
-  margin-bottom: 12px;
+  flex: 0 0 calc((100% - 24px) / 3);
+  height: 320px;
 }
 
 .testimonial-badge {
@@ -359,7 +361,9 @@ vturb-smartplayer {
 .testimonial-card img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 
 /* ── PODCAST ── */
@@ -460,12 +464,12 @@ vturb-smartplayer {
   }
 
   .testimonials-grid {
-    column-count: 2;
-    column-gap: 8px;
+    gap: 8px;
   }
 
   .testimonial-card {
-    margin-bottom: 8px;
+    flex: 0 0 calc((100% - 8px) / 2);
+    height: 220px;
   }
 
   .testimonial-badge {
