@@ -67,6 +67,12 @@
       </div>
     </div>
 
+    <!-- FULL SALES FLIX CTA -->
+    <a href="https://aulagratuita.fullsalessystem.com/" target="_blank" rel="noopener" class="flix-cta">
+      <svg viewBox="0 0 24 24" width="22" height="22"><polygon points="5 3 19 12 5 21 5 3" fill="#fff"/></svg>
+      Acesse o Full Sales Flix — Aulas Gratuitas
+    </a>
+
     <!-- INFO CARDS -->
     <div class="info-cards">
       <div class="info-card">
@@ -152,6 +158,19 @@
     Quero pular a fila
   </a>
 
+  <!-- EXIT POPUP -->
+  <div class="exit-popup-overlay" id="exitPopup">
+    <div class="exit-popup">
+      <button class="exit-popup-close" id="exitPopupClose">&times;</button>
+      <div class="exit-popup-icon">
+        <svg viewBox="0 0 24 24" width="40" height="40"><polygon points="5 3 19 12 5 21 5 3" fill="#FE063B"/></svg>
+      </div>
+      <h3>Antes de sair...</h3>
+      <p>Conheça o <strong>Full Sales Flix</strong> — aulas gratuitas para turbinar seu comercial enquanto aguarda nosso contato!</p>
+      <a href="https://aulagratuita.fullsalessystem.com/" target="_blank" rel="noopener" class="exit-popup-btn">Acessar Full Sales Flix</a>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-logo">
@@ -169,6 +188,23 @@
     </p>
   </footer>
 
-
+  <script>
+    (function(){
+      var popup = document.getElementById('exitPopup');
+      var shown = false;
+      document.addEventListener('mouseout', function(e){
+        if (!shown && e.clientY < 5) {
+          popup.classList.add('active');
+          shown = true;
+        }
+      });
+      document.getElementById('exitPopupClose').addEventListener('click', function(){
+        popup.classList.remove('active');
+      });
+      popup.addEventListener('click', function(e){
+        if (e.target === popup) popup.classList.remove('active');
+      });
+    })();
+  </script>
 </body>
 </html>
