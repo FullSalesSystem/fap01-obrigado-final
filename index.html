@@ -192,6 +192,23 @@
         if (e.target === popup) popup.classList.remove('active');
       });
     })();
+
+    if (window.innerWidth <= 600) {
+      var g = document.querySelector('.flix-gallery');
+      if (g) {
+        var imgs = g.querySelectorAll('img');
+        var w = function(){ return imgs[0].offsetWidth + 14; };
+        setInterval(function(){
+          var max = g.scrollWidth - g.clientWidth;
+          if (g.scrollLeft >= max - 2) {
+            g.scrollTo({left: 0, behavior:'smooth'});
+          } else {
+            g.scrollBy({left: w(), behavior:'smooth'});
+          }
+        }, 2500);
+        g.addEventListener('pointerdown', function(){ clearInterval(this); });
+      }
+    }
   </script>
 </body>
 </html>
