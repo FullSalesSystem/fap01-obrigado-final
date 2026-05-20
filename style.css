@@ -434,14 +434,15 @@ vturb-smartplayer {
 }
 
 .exit-popup {
-  background: #fff;
+  background: url("assets/background-fss.png") center center / cover no-repeat, var(--navy);
   border-radius: 20px;
-  padding: 40px 32px;
-  max-width: 420px;
+  padding: 44px 36px;
+  max-width: 440px;
   width: 100%;
   text-align: center;
   position: relative;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .exit-popup-close {
@@ -451,45 +452,55 @@ vturb-smartplayer {
   background: none;
   border: none;
   font-size: 1.8rem;
-  color: #999;
+  color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   line-height: 1;
 }
 
 .exit-popup-close:hover {
-  color: #333;
+  color: #fff;
 }
 
-.exit-popup-icon {
-  margin-bottom: 16px;
+.exit-popup-logo {
+  height: 36px;
+  margin-bottom: 24px;
+  opacity: 0.9;
 }
 
 .exit-popup h3 {
   font-family: 'Sora', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--text-on-dark);
   margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.exit-popup h3 span {
+  color: var(--red);
 }
 
 .exit-popup p {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 24px;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.exit-popup p strong {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .exit-popup-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 32px;
+  display: block;
+  padding: 16px 32px;
   background: var(--red);
   color: #fff;
   font-family: 'Sora', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  border-radius: 10px;
   text-decoration: none;
   transition: background 0.2s, transform 0.2s;
 }
