@@ -526,6 +526,10 @@ vturb-smartplayer {
     gap: 5px;
   }
 
+  .notif-bar .dot {
+    display: none;
+  }
+
   .navbar .container {
     padding: 0 20px;
     height: 56px;
