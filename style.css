@@ -193,48 +193,42 @@ vturb-smartplayer {
 .flix-divider {
   border: none;
   border-top: 0.5px solid rgba(255, 255, 255, 0.07);
-  margin: 28px auto 0;
+  margin: 36px auto 0;
   max-width: 800px;
   width: 100%;
 }
 
 .flix-card {
-  margin-top: 28px;
-  max-width: 440px;
+  margin-top: 36px;
+  max-width: 640px;
   width: 100%;
   text-align: center;
 }
 
-.flix-card-label {
-  font-family: 'Sora', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.25);
-  margin-bottom: 6px;
+.flix-card-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 14px;
 }
 
 .flix-card-title {
   font-family: 'Sora', sans-serif;
-  font-size: 26px;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
   color: var(--text-on-dark);
-  margin-bottom: 10px;
+  margin-bottom: 24px;
+}
+
+.flix-card-title strong {
+  font-weight: 800;
 }
 
 .flix-card-title span {
   color: #e02b2b;
-}
-
-.flix-card-desc {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.4);
-  line-height: 1.6;
-  max-width: 340px;
-  margin: 0 auto 20px;
 }
 
 .flix-card-btn {
@@ -258,7 +252,7 @@ vturb-smartplayer {
 }
 
 .flix-card-footer {
-  margin-top: 12px;
+  margin-top: 14px;
   font-size: 11px;
   color: rgba(255, 255, 255, 0.2);
 }
