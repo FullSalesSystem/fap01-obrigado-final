@@ -318,38 +318,34 @@ vturb-smartplayer {
   background: transparent;
 }
 
-.testimonials-grid {
-  column-count: 3;
-  column-gap: 12px;
-  max-width: 720px;
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 480px;
   margin: 32px auto 0;
 }
 
 .testimonial-card {
   position: relative;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  border: none;
-  background: transparent;
-  break-inside: avoid;
-  margin-bottom: 12px;
+  width: 100%;
 }
 
 .testimonial-badge {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  display: block;
   background: var(--red);
   color: #fff;
   font-family: 'Sora', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 700;
-  padding: 8px 10px;
-  z-index: 2;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 10px 16px;
   text-align: center;
-  letter-spacing: 0.02em;
-  line-height: 1.35;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .testimonial-card img {
@@ -558,18 +554,13 @@ vturb-smartplayer {
     padding: 36px 16px;
   }
 
-  .testimonials-grid {
-    column-count: 2;
-    column-gap: 8px;
-  }
-
-  .testimonial-card {
-    margin-bottom: 8px;
+  .testimonials-list {
+    gap: 14px;
   }
 
   .testimonial-badge {
-    font-size: 0.48rem;
-    padding: 4px 3px;
+    font-size: 0.65rem;
+    padding: 8px 12px;
   }
 
   .podcast-cta {
