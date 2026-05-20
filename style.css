@@ -189,17 +189,15 @@ vturb-smartplayer {
   width: 100% !important;
 }
 
-/* ── FLIX CARD ── */
-.flix-divider {
-  border: none;
-  border-top: 0.5px solid rgba(255, 255, 255, 0.07);
-  margin: 36px auto 0;
-  max-width: 800px;
-  width: 100%;
+/* ── FLIX SECTION ── */
+.flix-section {
+  background: linear-gradient(170deg, rgba(254, 6, 59, 0.12) 0%, #000 30%, #000 70%, rgba(254, 6, 59, 0.08) 100%);
+  padding: 64px 24px;
+  display: flex;
+  justify-content: center;
 }
 
 .flix-card {
-  margin-top: 36px;
   max-width: 960px;
   width: 100%;
   text-align: center;
