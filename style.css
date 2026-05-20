@@ -501,6 +501,16 @@ vturb-smartplayer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 600px) {
+  .notif-bar {
+    padding: 8px 14px;
+  }
+
+  .notif-bar p {
+    font-size: 0.72rem;
+    line-height: 1.4;
+    gap: 5px;
+  }
+
   .navbar .container {
     padding: 0 20px;
     height: 56px;
