@@ -287,5 +287,27 @@
     if (a && typeof fbq === 'function') fbq('track', 'Contact');
   });
   </script>
+<!-- Conversões do qualificado (06/10/2026): a agenda saiu do fluxo e o FAP01 manda
+     qualificado e semi direto pra cá com ?perfil=. Antes esses eventos disparavam na
+     fap01-calendly (Lead e Lead_qualificado_geral no HTML, Lead_qualificado_FAP01 pelo
+     GTM, que só dispara naquele host). eventID = ?sid= (o mesmo do /api/lead), 1x por sid.
+     Semi não dispara nada, igual antes. -->
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  if (q.get('perfil') !== 'qualificado') return;
+  var sid = q.get('sid') || '';
+  try { if (sid && localStorage.getItem('fss_lq_' + sid)) return; } catch (e) {}
+  var tries = 0;
+  (function go() {
+    if (typeof fbq !== 'function') { if (++tries < 40) setTimeout(go, 250); return; }
+    var o = sid ? { eventID: sid } : undefined;
+    fbq('track', 'Lead', {}, o);
+    fbq('trackCustom', 'Lead_qualificado_geral', {}, o);
+    fbq('trackCustom', 'Lead_qualificado_FAP01', {}, o);
+    try { if (sid) localStorage.setItem('fss_lq_' + sid, '1'); } catch (e) {}
+  })();
+})();
+</script>
 </body>
 </html>
