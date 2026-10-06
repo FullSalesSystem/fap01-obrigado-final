@@ -287,6 +287,23 @@
     if (a && typeof fbq === 'function') fbq('track', 'Contact');
   });
   </script>
+<!-- 3C Plus (06/10/2026): quando o /api/lead do FAP01 confirmou que o discador
+     ligou pro lead, o form manda ?ligando=1&sdr=<primeiro nome>. Aí o título vira
+     "O <SDR> está te ligando agora". Sem ligando=1 a página fica como sempre. -->
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  if (q.get('ligando') !== '1') return;
+  var sdr = (q.get('sdr') || '').replace(/[^A-Za-zÀ-ÿ]/g, '').slice(0, 30);
+  var h1 = document.querySelector('.hero h1');
+  if (!h1) return;
+  h1.textContent = (sdr ? 'O ' + sdr + ', do nosso time, ' : 'Nosso time ') + 'está te ligando agora. ';
+  var acc = document.createElement('span');
+  acc.className = 'accent';
+  acc.textContent = 'Atende o celular!';
+  h1.appendChild(acc);
+})();
+</script>
 <!-- Conversões do qualificado (06/10/2026): a agenda saiu do fluxo e o FAP01 manda
      qualificado e semi direto pra cá com ?perfil=. Antes esses eventos disparavam na
      fap01-calendly (Lead e Lead_qualificado_geral no HTML, Lead_qualificado_FAP01 pelo
