@@ -293,14 +293,16 @@
 <script>
 (function () {
   var q = new URLSearchParams(location.search);
-  if (q.get('ligando') !== '1') return;
+  var agora = q.get('ligando') === '1';
+  if (!agora && q.get('fila') !== '1') return;
   var sdr = (q.get('sdr') || '').replace(/[^A-Za-zÀ-ÿ]/g, '').slice(0, 30);
   var h1 = document.querySelector('.hero h1');
   if (!h1) return;
-  h1.textContent = (sdr ? 'O ' + sdr + ', do nosso time, ' : 'Nosso time ') + 'está te ligando agora. ';
+  /* fila=1: o lead entrou na fila da campanha da 3C no horário de discagem */
+  h1.textContent = (sdr ? 'O ' + sdr + ', do nosso time, ' : 'Nosso time ') + (agora ? 'está te ligando agora. ' : 'vai te ligar em instantes. ');
   var acc = document.createElement('span');
   acc.className = 'accent';
-  acc.textContent = 'Atende o celular!';
+  acc.textContent = agora ? 'Atende o celular!' : 'Fica de olho no celular!';
   h1.appendChild(acc);
 })();
 </script>
