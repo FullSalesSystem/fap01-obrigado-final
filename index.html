@@ -307,6 +307,17 @@
     fbq('trackCustom', 'Lead_qualificado_FAP01', {}, o);
     try { if (sid) localStorage.setItem('fss_lq_' + sid, '1'); } catch (e) {}
   })();
+  /* Google Ads: conversão de qualificado que o GTM disparava no load da fap01-calendly
+     (tag awct, só naquele host). O gclid chega na query e o Conversion Linker do GTM
+     grava o cookie aqui também. transaction_id = sid evita contar 2x. */
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { dataLayer.push(arguments); };
+  var s = document.createElement('script');
+  s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-11465446145';
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'AW-11465446145');
+  gtag('event', 'conversion', { send_to: 'AW-11465446145/1Vh8CIeEjqYbEIGmk9sq', transaction_id: sid });
 })();
 </script>
 </body>
