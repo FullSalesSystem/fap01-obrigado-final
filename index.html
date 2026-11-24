@@ -326,8 +326,24 @@
 <script>
 (function () {
   var q = new URLSearchParams(location.search);
-  if (q.get('perfil') !== 'qualificado') return;
+  var perfil = q.get('perfil');
   var sid = q.get('sid') || '';
+  /* 24/11/2026: régua de marketing = 50k+. Sócio 40-50k chega como perfil=oportunidade:
+     atendido pelo SDR igual, mas não é MQL. Só Lead + Lead_oportunidade_comercial (mesmo
+     eventID = sid do /api/lead/CAPI), sem eventos de qualificado e sem conversão do Google Ads. */
+  if (perfil === 'oportunidade') {
+    try { if (sid && localStorage.getItem('fss_lo_' + sid)) return; } catch (e) {}
+    var n = 0;
+    (function vai() {
+      if (typeof fbq !== 'function') { if (++n < 40) setTimeout(vai, 250); return; }
+      var ev = sid ? { eventID: sid } : undefined;
+      fbq('track', 'Lead', {}, ev);
+      fbq('trackCustom', 'Lead_oportunidade_comercial', {}, ev);
+      try { if (sid) localStorage.setItem('fss_lo_' + sid, '1'); } catch (e) {}
+    })();
+    return;
+  }
+  if (perfil !== 'qualificado') return;
   try { if (sid && localStorage.getItem('fss_lq_' + sid)) return; } catch (e) {}
   var tries = 0;
   (function go() {
