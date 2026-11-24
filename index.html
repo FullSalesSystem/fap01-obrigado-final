@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Meta Pixel PRIMEIRO (24/11/2026): PageView sem esperar o GTM. O stub deixa passar só o 1º PageView
+       (o template do GTM reaproveita este window.fbq). Lead/Lead_qualificado seguem com eventID = ?sid=. -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){var a=arguments;if((a[0]==='track'&&a[1]==='PageView')||(a[0]==='trackSingle'&&a[2]==='PageView')){if(n._pv)return;n._pv=1}n.callMethod?n.callMethod.apply(n,a):n.queue.push(a)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','288404690470754');fbq('track','PageView');</script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
