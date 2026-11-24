@@ -27,7 +27,7 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background: url("assets/background-fss.png") center center / cover no-repeat fixed, var(--bg);
+  background: url("assets/background-fss.webp") center center / cover no-repeat fixed, var(--bg);
   color: var(--text-primary);
   min-height: 100vh;
 }
@@ -434,7 +434,7 @@ vturb-smartplayer {
 }
 
 .exit-popup {
-  background: url("assets/background-fss.png") center center / cover no-repeat, var(--navy);
+  background: url("assets/background-fss.webp") center center / cover no-repeat, var(--navy);
   border-radius: 20px;
   padding: 52px 48px;
   max-width: 580px;
@@ -666,3 +666,7 @@ vturb-smartplayer {
 .exit-popup-btn--wa{background:#25D366;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px}.exit-popup-btn--wa:hover{background:#1eb857}.exit-popup-alt{display:block;margin-top:14px;color:rgba(255,255,255,0.72);font-size:0.85rem;text-decoration:underline;text-underline-offset:3px}.exit-popup-alt:hover{color:#fff}
 
 .exit-popup h3{white-space:normal}
+
+/* 24/11: imgs agora têm width/height (CLS); manter proporção pelo CSS */
+.flix-gallery img{height:auto;aspect-ratio:2/3}
+.navbar-logo img,.footer-logo img,.exit-popup-logo{width:auto}

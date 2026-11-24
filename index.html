@@ -13,10 +13,15 @@
   <title>Cadastro Concluído | Obrigado!</title>
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="apple-touch-icon" href="assets/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.min.css" />
+  <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+@font-face{font-family:'Sora';font-style:normal;font-weight:400 800;font-display:swap;src:url(assets/fonts/sora-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Sora';font-style:normal;font-weight:400 800;font-display:swap;src:url(assets/fonts/sora-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+  </style>
+  <link rel="stylesheet" href="style.min.css?v=20261124" />
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -28,9 +33,10 @@
     <div class="container">
       <div class="navbar-logo">
         <img
-          src="assets/logo-branco.png"
+          src="assets/logo-branco.webp"
           alt="Full Sales System"
-          loading="lazy"
+          width="640" height="200"
+          fetchpriority="high"
         />
       </div>
     </div>
@@ -98,21 +104,21 @@
       <h3 class="flix-card-title">A <span>Full Sales Academy</span> é uma biblioteca <span>gratuita</span> com playbooks, estudos de caso, guias práticos e workshops com especialistas.</h3>
 
       <div class="flix-gallery">
-        <img src="assets/flix-playbook.png" alt="Playbook Interno de Estruturação Comercial 3.0" loading="lazy" />
-        <img src="assets/flix-guia-social.png" alt="Guia Prático de Social Selling" loading="lazy" />
-        <img src="assets/flix-estudo-caso.png" alt="Estudo de Caso: Gabriel Bueno" loading="lazy" />
-        <img src="assets/flix-bonus-talk.png" alt="Talk com Alfredo Soares" loading="lazy" />
-        <img src="assets/flix-bonus-workshop.png" alt="Workshop de Social Selling" loading="lazy" />
-        <img src="assets/flix-bonus-apresentacao.png" alt="Como fazer uma apresentação comercial" loading="lazy" />
-        <img src="assets/flix-podcast-faixa-preta.png" alt="Podcast Comercial Faixa Preta" loading="lazy" />
-        <img src="assets/flix-podcast-full-sales.png" alt="Podcast Full Sales" loading="lazy" />
+        <img src="assets/flix-playbook.webp" width="400" height="600" alt="Playbook Interno de Estruturação Comercial 3.0" loading="lazy" />
+        <img src="assets/flix-guia-social.webp" width="400" height="600" alt="Guia Prático de Social Selling" loading="lazy" />
+        <img src="assets/flix-estudo-caso.webp" width="400" height="600" alt="Estudo de Caso: Gabriel Bueno" loading="lazy" />
+        <img src="assets/flix-bonus-talk.webp" width="400" height="600" alt="Talk com Alfredo Soares" loading="lazy" />
+        <img src="assets/flix-bonus-workshop.webp" width="400" height="600" alt="Workshop de Social Selling" loading="lazy" />
+        <img src="assets/flix-bonus-apresentacao.webp" width="400" height="600" alt="Como fazer uma apresentação comercial" loading="lazy" />
+        <img src="assets/flix-podcast-faixa-preta.webp" width="400" height="600" alt="Podcast Comercial Faixa Preta" loading="lazy" />
+        <img src="assets/flix-podcast-full-sales.webp" width="400" height="600" alt="Podcast Full Sales" loading="lazy" />
       </div>
 
       <a href="https://aulagratuita.fullsalessystem.com/" target="_blank" rel="noopener" class="flix-card-btn">
         Acesse agora gratuitamente &rarr;
       </a>
       <p class="flix-card-footer">
-        Acesso imediato &nbsp;·&nbsp; +600 empresas estruturadas
+        Acesso imediato &nbsp;·&nbsp; +700 empresas estruturadas
       </p>
     </div>
   </section>
@@ -124,39 +130,39 @@
     <div class="testimonials-list">
       <div class="testimonial-card">
         <span class="testimonial-badge">SAIU DO ZERO E VENDEU R$63 MIL</span>
-        <img src="assets/2.png" alt="Depoimento Vitor Espíndola" loading="lazy" />
+        <img src="assets/2.webp" width="720" height="900" alt="Depoimento Vitor Espíndola" loading="lazy" />
       </div>
       <div class="testimonial-card">
         <span class="testimonial-badge">PRIMEIRO MÊS DE 6 DÍGITOS: BATEU 100K</span>
-        <img src="assets/3.png" alt="Depoimento Gui David" loading="lazy" />
+        <img src="assets/3.webp" width="720" height="900" alt="Depoimento Gui David" loading="lazy" />
       </div>
       <div class="testimonial-card">
         <span class="testimonial-badge">CHEGOU FATURANDO 200K E MAIS QUE DOBROU</span>
-        <img src="assets/5.png" alt="Depoimento Marcos Paulo" loading="lazy" />
+        <img src="assets/5.webp" width="720" height="900" alt="Depoimento Marcos Paulo" loading="lazy" />
       </div>
       <div class="testimonial-card">
         <span class="testimonial-badge">100% COMPARECIMENTO, 50% CONVERSÃO, TICKET 58K</span>
-        <img src="assets/6.png" alt="Depoimento Enoque" loading="lazy" />
+        <img src="assets/6.webp" width="720" height="900" alt="Depoimento Enoque" loading="lazy" />
       </div>
       <div class="testimonial-card">
         <span class="testimonial-badge">FECHOU HIGH END DE R$180K NO PRIMEIRO MÊS</span>
-        <img src="assets/7.png" alt="Depoimento Dennis Faustino" loading="lazy" />
+        <img src="assets/7.webp" width="720" height="900" alt="Depoimento Dennis Faustino" loading="lazy" />
       </div>
       <div class="testimonial-card">
         <span class="testimonial-badge">PRIMEIRA VENDA DE R$150 MIL NO PIX</span>
-        <img src="assets/8.png" alt="Depoimento Marcos Paulo" loading="lazy" />
+        <img src="assets/8.webp" width="720" height="900" alt="Depoimento Marcos Paulo" loading="lazy" />
       </div>
       <div class="testimonial-card">
         <span class="testimonial-badge">CHEGOU FATURANDO 50K E CHEGOU A 475K, 10X MAIS</span>
-        <img src="assets/10.png" alt="Depoimento Gabriel Santos" loading="lazy" />
+        <img src="assets/10.webp" width="720" height="900" alt="Depoimento Gabriel Santos" loading="lazy" />
       </div>
       <div class="testimonial-card">
         <span class="testimonial-badge">BATERAM 1.9 MILHÃO EM 4 MESES</span>
-        <img src="assets/12.png" alt="Depoimento cliente FSS" loading="lazy" />
+        <img src="assets/12.webp" width="720" height="900" alt="Depoimento cliente FSS" loading="lazy" />
       </div>
       <div class="testimonial-card">
         <span class="testimonial-badge">13 CALLS, 9 FECHAMENTOS, FATURAMENTO 41K</span>
-        <img src="assets/15.png" alt="Depoimento Daniele Stuart" loading="lazy" />
+        <img src="assets/15.webp" width="720" height="900" alt="Depoimento Daniele Stuart" loading="lazy" />
       </div>
     </div>
   </section>
@@ -171,7 +177,7 @@
   <div class="exit-popup-overlay" id="exitPopup">
     <div class="exit-popup">
       <button class="exit-popup-close" id="exitPopupClose" aria-label="Fechar">&times;</button>
-      <img src="assets/logo-branco.png" alt="Full Sales System" class="exit-popup-logo" />
+      <img src="assets/logo-branco.webp" alt="Full Sales System" class="exit-popup-logo" width="640" height="200" loading="lazy" />
       <h3>Antes de sair, garanta seu <span>atendimento prioritário</span></h3>
       <p>Fale agora com o time no WhatsApp e adiante sua análise — resposta em minutos no horário comercial.</p>
       <a href="https://wa.me/5511955021415?text=Quero%20pular%20a%20fila" target="_blank" rel="noopener" class="exit-popup-btn exit-popup-btn--wa" data-exit-cta="whatsapp">
@@ -186,8 +192,9 @@
   <footer class="footer">
     <div class="footer-logo">
       <img
-        src="assets/logo-branco.png"
+        src="assets/logo-branco.webp"
         alt="Full Sales System"
+        width="640" height="200"
         loading="lazy"
       />
     </div>
